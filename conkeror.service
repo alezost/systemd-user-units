@@ -1,0 +1,14 @@
+[Unit]
+Description=Conkeror service
+
+Before=graphical.target
+After=xsettings.target
+After=xorg-base.target
+
+Requires=xorg-base.target
+
+[Service]
+ExecStart=/usr/local/bin/conkeror
+
+[Install]
+WantedBy=graphical.target

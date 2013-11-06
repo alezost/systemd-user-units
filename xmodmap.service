@@ -1,0 +1,14 @@
+[Unit]
+Description=Xmodmap service
+
+Before=xsettings.target
+After=xorg-base.target
+
+Requires=xorg-base.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/xmodmap %h/.Xmodmap
+
+[Install]
+WantedBy=xsettings.target

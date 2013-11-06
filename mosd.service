@@ -1,0 +1,15 @@
+[Unit]
+Description=mosdd service
+
+Before=graphical.target
+After=xorg-base.target
+Requires=xorg-base.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/mosdd -S %h/.osdrc
+ExecStop=/usr/local/bin/mosdctl -x
+KillMode=none
+
+[Install]
+WantedBy=graphical.target

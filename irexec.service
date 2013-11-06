@@ -1,0 +1,12 @@
+[Unit]
+Description=IR Exec service
+Before=default.target
+# After=lirc.service
+# Wants=lirc.service
+
+[Service]
+ExecStart=/usr/bin/irexec --daemon
+Type=forking
+
+[Install]
+WantedBy=default.target

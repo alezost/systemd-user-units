@@ -1,0 +1,14 @@
+[Unit]
+Description=Xsetroot service
+
+Before=xsettings.target
+After=xorg-base.target
+
+Requires=xorg-base.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/xsetroot -solid gray30 -xcf %h/.icons/ComixCursors-Opaque-Green-Regular-Slim/cursors/cell 1
+
+[Install]
+WantedBy=xsettings.target

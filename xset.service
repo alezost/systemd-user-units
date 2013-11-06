@@ -1,0 +1,14 @@
+[Unit]
+Description=Xset service
+
+Before=xsettings.target
+After=xorg-base.target
+
+Requires=xorg-base.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/xset r rate 193 43 m 2 0 s off -dpms
+
+[Install]
+WantedBy=xsettings.target

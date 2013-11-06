@@ -1,0 +1,15 @@
+[Unit]
+Description=xterm Exec
+
+Before=graphical.target
+After=xsettings.target
+After=xorg-base.target
+
+Requires=xorg-base.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/xterm
+
+[Install]
+WantedBy=graphical.target
