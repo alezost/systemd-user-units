@@ -1,15 +1,14 @@
 [Unit]
-Description=mosdd service
+Description=mosdd service (display %i)
 
-Before=graphical.target
-After=xorg-base.target
-Requires=xorg-base.target
+After=x@%i.service
 
 [Service]
 Type=simple
 ExecStart=/usr/local/bin/mosdd -S %h/.osdrc
 ExecStop=/usr/local/bin/mosdctl -x
 KillMode=none
+Environment=DISPLAY=:%i
 
 [Install]
-WantedBy=graphical.target
+WantedBy=gui@%i.target

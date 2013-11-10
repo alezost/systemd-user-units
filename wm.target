@@ -1,5 +1,0 @@
-[Unit]
-Description=WM (DE) target
-
-[Install]
-WantedBy=graphical.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Emacs service (display %i)
+
+After=xbase@%i.target
+
+[Service]
+ExecStart=/usr/bin/emacs -mm
+Environment=DISPLAY=:%i
+
+[Install]
+WantedBy=gui@%i.target

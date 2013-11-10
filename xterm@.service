@@ -1,0 +1,12 @@
+[Unit]
+Description=Xterm service (display %i)
+
+After=xbase@%i.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/xterm
+Environment=DISPLAY=:%i
+
+[Install]
+WantedBy=gui@%i.target

@@ -1,0 +1,13 @@
+# x-daemon is a bash script from <https://github.com/joukewitteveen/xlogin>
+
+[Unit]
+Description=X server service (display %i)
+StopWhenUnneeded=true
+
+[Service]
+# Type=notify
+# ExecStart=/usr/bin/bash -c "/usr/bin/xorg-launch-helper :%i -nolisten tcp -noreset vt$((7+%i))"
+Type=forking
+ExecStart=/usr/bin/bash -c "/usr/local/bin/x-daemon :%i vt$((7+%i)) -nolisten tcp -noreset"
+# Restart=always
+# RestartSec=10

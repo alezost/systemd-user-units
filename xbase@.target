@@ -1,0 +1,11 @@
+[Unit]
+Description=X server with essential environment and settings (display %i)
+StopWhenUnneeded=true
+
+After=dbus.socket
+After=gpg-agent.service
+After=x@%i.service
+
+Wants=dbus.socket
+Wants=gpg-agent.service
+Requires=x@%i.service

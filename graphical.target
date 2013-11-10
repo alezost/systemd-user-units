@@ -1,5 +1,0 @@
-[Unit]
-Description=User Graphical Interface target
-
-[Install]
-WantedBy=default.target

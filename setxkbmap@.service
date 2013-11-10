@@ -1,0 +1,16 @@
+[Unit]
+Description=setxkbmap service (display %i)
+
+Before=xbase@%i.target
+# setxkbmap destroys xmodmap and numlock settings somehow, so start it before
+Before=xmodmap@%i.service
+Before=numlock@%i.service
+After=x@%i.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/setxkbmap dvorak,ru,us
+Environment=DISPLAY=:%i
+
+[Install]
+WantedBy=xbase@%i.target

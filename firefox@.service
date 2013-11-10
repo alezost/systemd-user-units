@@ -1,0 +1,11 @@
+[Unit]
+Description=Firefox service (display %i)
+
+After=xbase@%i.target
+
+[Service]
+ExecStart=/usr/sbin/firefox
+Environment=DISPLAY=:%i
+
+[Install]
+WantedBy=gui@%i.target

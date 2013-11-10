@@ -1,0 +1,13 @@
+[Unit]
+Description=Numlockx service - turn NumLock ON (display %i)
+
+Before=xbase@%i.target
+After=x@%i.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/numlockx on
+Environment=DISPLAY=:%i
+
+[Install]
+WantedBy=xbase@%i.target

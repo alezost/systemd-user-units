@@ -1,0 +1,11 @@
+[Unit]
+Description=Conkeror service (display %i)
+
+After=xbase@%i.target
+
+[Service]
+ExecStart=/usr/local/bin/conkeror
+Environment=DISPLAY=:%i
+
+[Install]
+WantedBy=gui@%i.target

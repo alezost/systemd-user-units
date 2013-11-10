@@ -5,8 +5,8 @@ Before=default.target
 # Wants=lirc.service
 
 [Service]
-ExecStart=/usr/bin/irexec --daemon
 Type=forking
+ExecStart=/usr/bin/irexec --daemon
 
 [Install]
 WantedBy=default.target
