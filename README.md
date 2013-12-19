@@ -15,8 +15,8 @@ session with user services, you may read:
 Basically the structure of my user units is the following:
 - user daemons (like gpg-agent) and `gui@.target` are "attached"
   to (WantedBy) `default.target`;
-- `gui@.target` provides a GUI interface -- it starts:
-  + `xbase@.target` -- X server with configuration utils (xmodmap,
+- `gui@.target` provides a GUI interface – it starts:
+  + `xbase@.target` – X server with configuration utils (xmodmap,
     xset, ...);
   + GUI applications (emacs, xterm, ...) "attacted" to this target.
 
@@ -27,8 +27,8 @@ Previously i used
 [sofar/xorg-launch-helper](https://github.com/sofar/xorg-launch-helper).
 
 It is possible to organize multiple X sessions with different settings
-and starting applications: DISPLAY :0 will be run on vt7, :1 on vt8
-and so on.
+and starting applications: ``DISPLAY :0`` will be run on `vt7`,
+``DISPLAY :1`` on `vt8` and so on.
 
 ## Example
 
@@ -67,9 +67,9 @@ systemctl --user enable openbox@1
 systemctl --user enable xterm@1
 ```
 
-Actually i have a shell alias `scu` for `systemctl --user` (and `sc`
-for `systemctl`), so i can run the second X session with `scu start
+Actually i have a shell alias `scu` for `systemctl --user` (and `sc` for
+`systemctl`), so i can run the second X session with `scu start
 gui@1.target` (it will be started on virtual terminal 8,
-i.e. Ctrl+Alt+F7/F8 to switch between X sessions) and if i don't need
-it anymore, then just `scu stop gui@1.target` and there is no sign of
-it.
+i.e. <kbd>Ctrl+Alt+F7/F8</kbd> to switch between X sessions) and if i
+don't need it anymore, then just `scu stop gui@1.target` and there is no
+sign of it.
