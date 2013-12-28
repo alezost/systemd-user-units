@@ -1,0 +1,11 @@
+[Unit]
+Description=Unclutter (hide idle cursor) service (display %i)
+
+After=xbase@%i.target
+
+[Service]
+ExecStart=/usr/bin/unclutter -root -jitter 5
+Environment=DISPLAY=:%i
+
+[Install]
+WantedBy=gui@%i.target
