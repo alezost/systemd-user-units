@@ -1,0 +1,13 @@
+[Unit]
+Description=Emacs client service (display %i)
+
+After=xbase@%i.target
+After=emacsd.service
+Requires=emacsd.service
+
+[Service]
+ExecStart=/usr/bin/emacsclient -c
+Environment=DISPLAY=:%i
+
+[Install]
+WantedBy=gui@%i.target
