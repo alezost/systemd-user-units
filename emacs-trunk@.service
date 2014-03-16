@@ -1,0 +1,11 @@
+[Unit]
+Description=Emacs (trunk) service (display %i)
+
+After=xbase@%i.target
+
+[Service]
+ExecStart=/usr/local/bin/emacs-trunk
+Environment=DISPLAY=:%i
+
+[Install]
+WantedBy=gui@%i.target
