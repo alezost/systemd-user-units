@@ -7,7 +7,7 @@ Before=default.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh -c "/usr/bin/systemctl --user set-environment $(gpg-agent --daemon | cut -d\; -f1)"
+ExecStart=/bin/sh -c "/usr/bin/systemctl --user set-environment $(gpg-agent --enable-ssh-support --daemon | cut -d\; -f1)"
 ExecStop=/usr/bin/pkill gpg-agent ; /usr/bin/systemctl --no-block --user unset-environment GPG_AGENT_INFO
 RemainAfterExit=yes
 
