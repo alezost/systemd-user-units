@@ -1,0 +1,9 @@
+[Unit]
+Description=TV guide timer
+
+[Timer]
+OnCalendar=Mon *-*-* 11:00
+AccuracySec=1h
+
+[Install]
+WantedBy=default.target

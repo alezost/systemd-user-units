@@ -1,0 +1,8 @@
+[Unit]
+Description=TV guide service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/tvguide_refresh
+Nice=19
+
