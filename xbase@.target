@@ -4,8 +4,10 @@ StopWhenUnneeded=true
 
 After=dbus.socket
 After=gpg-agent.service
+After=env.service
 After=x@%i.service
 
 Wants=dbus.socket
 Wants=gpg-agent.service
+Wants=env.service
 Requires=x@%i.service
