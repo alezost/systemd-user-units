@@ -1,0 +1,15 @@
+[Unit]
+Description=GuileWM service (display %i)
+
+Before=gui@%i.target
+After=xbase@%i.target
+
+Conflicts=openbox@%i.service
+Conflicts=stumpwm@%i.service
+
+[Service]
+ExecStart=/usr/local/bin/guile-wm
+Environment=DISPLAY=:%i
+
+[Install]
+WantedBy=gui@%i.target
