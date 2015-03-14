@@ -1,0 +1,13 @@
+[Unit]
+Description=Connect MIDI keyboard to ALSA
+Before=default.target
+
+After=timidity.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/aconnect 28 129
+ExecStop=/usr/bin/aconnect -x
+
+[Install]
+WantedBy=default.target
