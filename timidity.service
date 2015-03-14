@@ -1,0 +1,10 @@
+[Unit]
+Description=TiMidity++ Daemon
+Before=default.target
+After=sound.target
+
+[Service]
+ExecStart=/usr/bin/timidity -iA -B2,8
+
+[Install]
+WantedBy=default.target
