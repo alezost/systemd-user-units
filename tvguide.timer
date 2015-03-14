@@ -2,8 +2,8 @@
 Description=TV guide timer
 
 [Timer]
-OnCalendar=Mon *-*-* 11:00
-AccuracySec=1h
+OnCalendar=Mon *-*-* 00:01
+AccuracySec=10min
 
 [Install]
 WantedBy=default.target
