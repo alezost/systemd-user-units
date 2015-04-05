@@ -6,7 +6,7 @@ After=x@%i.service
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/mosdd --script=%h/config/osdrc
+ExecStart=/usr/local/bin/mosdd --script=%h/config/mosd/rc
 ExecStop=/usr/local/bin/mosdctl -x
 KillMode=none
 Environment=DISPLAY=:%i
