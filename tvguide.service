@@ -3,6 +3,6 @@ Description=TV guide service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/tvguide_refresh
+ExecStart=/usr/local/bin/tvguide-refresh
 Nice=19
 
