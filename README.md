@@ -1,3 +1,7 @@
+This repository is dead: nowadays I use GNU Shepherd to manage my user
+services: https://github.com/alezost/shepherd-config
+
+
 ## About
 
 These are my systemd user units located in
